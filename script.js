@@ -1,15 +1,19 @@
-//obs: código originalmente escrito pelo Professor Gabriel Oliva e modificado por mim, Robson Cardozo.
+//obs: código originalmente escrito pelo Professor Gabriel Oliva e modificado por Robson Cardozo.
 
 let megaSenaDraw = [];
 let game = [4, 8, 15, 16, 23, 42];
+
+function numberSort (a, b) {
+  return a - b;
+};
 
 function random() {
   for (let i = 0; i < 6; i += 1) {
     megaSenaDraw[i] = Math.ceil(Math.random() * 60);
   }
-  megaSenaDraw = megaSenaDraw.sort();
+  megaSenaDraw = megaSenaDraw.sort(numberSort);
   return megaSenaDraw;
-}
+};
 
 // Como conferir o jogo da mega?
 let numberOfHits = 0;
@@ -21,7 +25,7 @@ while (numberOfHits < 6) {
       for (let k = 0; k < game.length; k += 1) {
         let gameNumber = game[k];
         // gameNumber tem que ser IGUAL ao drawNumber
-      if (gameNumber === drawNumber) {
+        if (gameNumber === drawNumber) {
          numberOfHits += 1;
       }
     }
