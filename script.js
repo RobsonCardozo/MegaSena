@@ -22,6 +22,8 @@ while (numberOfHits < 6) {
       }
     }
   }
+  if (numberOfHits === 6) break;
+  else (numberOfHits = 0);
 }
 
 console.log('Resultado da MegaSena: ' + megaSenaDraw);
