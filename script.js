@@ -1,7 +1,6 @@
 //obs: código originalmente escrito pelo Professor Gabriel Oliva e modificado por Robson Cardozo.
 
 let megaSenaDraw = [];
-let drawNumber = [];
 let game = [4, 8, 15, 16, 23, 42];
 
 function random() {
@@ -15,7 +14,7 @@ let numberOfHits = 0;
 while (numberOfHits < 6) {
   random();
   for (let j = 0; j < megaSenaDraw.length; j += 1) {
-    drawNumber = megaSenaDraw[j];
+    let drawNumber = megaSenaDraw[j];
     for (let k = 0; k < game.length; k += 1) {
       let gameNumber = game[k];
       if (gameNumber === drawNumber) {
