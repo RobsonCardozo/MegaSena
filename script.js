@@ -1,11 +1,11 @@
 //obs: código originalmente escrito pelo Professor Gabriel Oliva e modificado por mim, Robson Cardozo.
 
 let megaSenaDraw = [];
-let game = [01, 05, 10, 12, 15, 20];
+let game = [4, 8, 15, 16, 23, 42];
 
 function random() {
   for (let i = 0; i < 6; i += 1) {
-    megaSenaDraw[i] = Math.ceil(Math.random() * 20);
+    megaSenaDraw[i] = Math.ceil(Math.random() * 60);
   }
   megaSenaDraw = megaSenaDraw.sort();
   return megaSenaDraw;
