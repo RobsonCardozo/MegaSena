@@ -15,7 +15,6 @@ function random() {
   return megaSenaDraw;
 };
 
-// Como conferir o jogo da mega?
 let numberOfHits = 0;
 
 while (numberOfHits < 6) {
@@ -24,16 +23,13 @@ while (numberOfHits < 6) {
     let drawNumber = megaSenaDraw[j];
       for (let k = 0; k < game.length; k += 1) {
         let gameNumber = game[k];
-        // gameNumber tem que ser IGUAL ao drawNumber
         if (gameNumber === drawNumber) {
          numberOfHits += 1;
       }
     }
   }
-  if (numberOfHits === 6) numberOfHits = 6;
-  else numberOfHits = 0;
 }
 
-console.log('Sorteio da mega: ' + megaSenaDraw);
+console.log('Sorteio da Mega: ' + megaSenaDraw);
 console.log('Jogo: ' + game);
-console.log('O total de acertos foi: ' + numberOfHits);
+console.log('Total de acertos: ' + numberOfHits);
