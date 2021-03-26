@@ -4,7 +4,10 @@ let megaSenaDraw = [];
 let game = [4, 8, 15, 16, 23, 42];
 
 function random() {
-  for (let i = 0; i < 6; i += 1) megaSenaDraw[i] = Math.ceil(Math.random() * 60);
+  for (let i = 0; i < 6; i += 1) {
+      if (megaSenaDraw[i] === megaSenaDraw[i]) megaSenaDraw[i] = Math.ceil(Math.random() * 60);
+      else megaSenaDraw[i] = Math.ceil(Math.random() * 60);
+  }
   megaSenaDraw = megaSenaDraw.sort((a, b) => a - b);
   return megaSenaDraw;
 };
