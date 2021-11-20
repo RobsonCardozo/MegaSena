@@ -1,5 +1,3 @@
-//obs: código originalmente escrito pelo Professor Gabriel Oliva e modificado por Robson Cardozo.
-
 let megaSenaDraw = [];
 let game = [4, 8, 15, 16, 23, 42];
 
