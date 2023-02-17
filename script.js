@@ -9,23 +9,28 @@ function sortearNumerosMegaSena() {
 
 function jogarMegaSena() {
   let game = [4, 8, 15, 16, 23, 42];
+  let megaSenaDraw;
   let numberOfHits = 0;
-
+  
   while (numberOfHits !== 6) {
-    let megaSenaDraw = sortearNumerosMegaSena();
+    megaSenaDraw = sortearNumerosMegaSena();
     numberOfHits = 0;
 
     for (let j = 0; j < megaSenaDraw.length; j += 1) {
       let drawNumber = megaSenaDraw[j];
-      if (game.includes(drawNumber)) {
-        numberOfHits += 1;
+      for (let k = 0; k < game.length; k += 1) {
+        let gameNumber = game[k];
+        if (gameNumber === drawNumber) {
+          numberOfHits += 1;
+        }
       }
     }
   }
-
+  
   console.log('Resultado da MegaSena: ' + megaSenaDraw);
   console.log('Jogo: ' + game);
   console.log('Total de acertos: ' + numberOfHits);
-  }
-  
-  jogarMegaSena();
+  return megaSenaDraw;
+}
+
+jogarMegaSena();
