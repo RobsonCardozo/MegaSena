@@ -1,1 +1,2 @@
-Live Lectures Exercises
+Simple Lottery App
+author: Robson Cardozo
