@@ -20,7 +20,7 @@ function jogarMegaSena() {
           let drawNumber = megaSenaDraw[j];
           for (let k = 0; k < game.length; k += 1) {
               let gameNumber = game[k];
-              if (gameNumber === drawNumber) {
+              if (drawNumber === gameNumber) {
                   numberOfHits += 1;
               }
           }
