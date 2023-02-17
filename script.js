@@ -1,36 +1,24 @@
-function sortearNumerosMegaSena() {
-  let megaSenaDraw = [];
-  for (let i = 0; i < 6; i += 1) {
-      megaSenaDraw[i] = Math.ceil(Math.random() * 60);
-  }
-  megaSenaDraw = megaSenaDraw.sort((a, b) => a - b);
-  return megaSenaDraw;
+// Generate user's game array
+let userGame = [];
+for (let i = 0; i < 6; i++) {
+    userGame.push(Math.floor(Math.random() * 10));
 }
 
-function jogarMegaSena() {
-  let game = sortearNumerosMegaSena();
-  let megaSenaDraw;
-  let numberOfHits = 0;
-
-  while (numberOfHits !== 6) {
-      megaSenaDraw = sortearNumerosMegaSena();
-      numberOfHits = 0;
-
-      for (let j = 0; j < megaSenaDraw.length; j += 1) {
-          let drawNumber = megaSenaDraw[j];
-          for (let k = 0; k < game.length; k += 1) {
-              let gameNumber = game[k];
-              if (drawNumber === gameNumber) {
-                  numberOfHits += 1;
-              }
-          }
-      }
-  }
-
-  console.log('Resultado da MegaSena: ' + megaSenaDraw);
-  console.log('Jogo: ' + game);
-  console.log('Total de acertos: ' + numberOfHits);
-  return megaSenaDraw;
+// Generate machine's game array
+let machineGame = [];
+for (let i = 0; i < 6; i++) {
+    machineGame.push(Math.floor(Math.random() * 10));
 }
 
-jogarMegaSena();
+// Compare the two arrays and count the number of matching numbers
+let matches = 0;
+for (let i = 0; i < 6; i++) {
+    if (userGame[i] === machineGame[i]) {
+        matches++;
+    }
+}
+
+// Print the result to the screen
+console.log(`Seu jogo: ${userGame}`);
+console.log(`Números sorteados: ${machineGame}`);
+console.log(`You got ${matches} matches!`);
